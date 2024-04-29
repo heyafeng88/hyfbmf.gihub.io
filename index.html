@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>拖拽图片并显示</title>
+    <style>
+        #dropzone {
+            width: 300px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            text-align: center;
+            line-height: 200px;
+            margin-bottom: 20px;
+        }
+
+        #imageGallery {
+            margin-top: 20px;
+        }
+
+        #imageGallery img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dropzone">拖拽图片到这里</div>
+    <div id="imageGallery"></div>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <input type="text" id="inputField" placeholder="在这里输入名字">
+    <button onclick="outputPng()">导出png</button>
+    <button onclick="outputFnt()">导出fnt</button>
+
+    <script src="./main.min2.js"></script>
+</body>
+
+</html>
