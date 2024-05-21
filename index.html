@@ -30,7 +30,12 @@
 
 <body>
     <p>1.文字图片需要高度一致</p>
-    <p>2.文字图片名称=字符名 例如：+.png 、 1.png 、 字.png</p>
+    <p>2.文字图片名称第一个字符=字符名 例如：+.png 、 1.png 、 字.png</p>
+    <p>-- 2.1 例如：+.png 、 1.png 、 字.png</p>
+    <p>3.英文字母大小写的问题：可在大写字母后加个点</p>
+    <p>4.英文特殊符号处理：</p>
+    <p id="p4">-- </p>
+    <p>-- 4.1 例如： 反斜杠.png、冒号.png</p>
     <div id="dropzone">拖拽图片到这里</div>
     <div id="imageGallery"></div>
     <canvas id="canvas" width="300" height="300"></canvas>
@@ -38,6 +43,20 @@
     <button onclick="outputPng()">导出png</button>
     <button onclick="outputFnt()">导出fnt</button>
 
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const dropzone = document.getElementById('dropzone');
+        const imageGallery = document.getElementById('imageGallery');
+        const p4 = document.getElementById('p4');
+        // 获取输入框和输出区域的引用
+        const inputField = document.getElementById('inputField');
+        inputField.placeholder = '在这里输入名字 鸣谢老何';
+
+        const yingshe1 = ['反斜杠', '除号', '冒号', '星号', '问号', '引号', '左尖括号', '右尖括号', '或号'];
+        const yingshe2 = ['\\', '/', ':', '*', '?', '"', '<', '>', '|'];
+        p4.textContent += yingshe1.map((el, i) => el + ' = ' + yingshe2[i]).join(' 、 ');
+    </script>
     <script src="./main.min2.js"></script>
 </body>
 
